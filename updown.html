@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Title</title>
+  <link rel="stylesheet" href="sass/style.css">
+
+</head>
+<body>
+<!--<div class="nav">-->
+<!--<div class="nav_left">-->
+<!--<div class="navPic">-->
+<!--<img src="imgs/4.png" alt="">-->
+<!--<p>返回</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<h1>补充资质</h1>-->
+<!--</div>
+<div class="crumbs-wrap">
+    <span class="back">返回</span>
+    <span class="title">补充资质</span>
+    <div class="more"></div>
+</div>-->
+
+<form action="ssssss" method="post">
+  <div id="container">
+    <div class="shenFen module-wrapper">
+      <div class="shenPic img-wrap">
+        <img src="imgs/3.png" alt="">
+      </div>
+      <p class="title">身份证照片</p>
+    </div>
+    <div id="upload" class="upload-wrapper">
+      <div class="upload-wrap">
+        <!-- 图片上传 -->
+        <div class="upload-item">
+          <div id="preview1" class="input-wrap">
+            <img id="imghead1" border="0" src="" onclick="$('#previewImg1').click();">
+          </div>
+          <input name="previewImg1" type="file" onchange="previewImage(this,'preview1',this.id,1)"
+                 style="display: none;" id="previewImg1">
+
+          <p class="text">身份证正面</p>
+        </div>
+        <div class="upload-item">
+          <div id="preview2" class="input-wrap">
+            <img id="imghead2" border="0" src="" onclick="$('#previewImg2').click();">
+          </div>
+          <input name="previewImg2" type="file" onchange="previewImage(this,'preview2',this.id,2)"
+                 style="display: none;" id="previewImg2">
+
+
+          <p class="text">身份证侧面</p>
+        </div>
+        <div class="upload-item">
+          <div id="preview3" class="input-wrap">
+            <img id="imghead3" border="0" src="" onclick="$('#previewImg3').click();">
+          </div>
+          <input name="previewImg3" type="file" onchange="previewImage(this,'preview3',this.id,3)"
+                 style="display: none;" id="previewImg3">
+          <p class="text">手持身份证</p>
+        </div>
+      </div>
+    </div>
+    <!-- 图片预览区-->
+    <div id="face" class="preview-wrapper">
+      <!--<img id="preview" src="" alt="">-->
+    </div>
+
+    <div class="shenFen module-wrapper mtop30">
+      <div class="shenPic img-wrap">
+        <img src="imgs/2.png" alt="">
+      </div>
+      <p class="title">其他照片 <span class="remarks">(营业执照可选)</span></p>
+      <!--<small>(营业执照可选)</small>-->
+    </div>
+
+    <div id="upload2" class="upload-wrapper">
+      <div class="upload-wrap">
+        <!-- 图片上传 -->
+        <div class="upload-item">
+          <div class="input-wrap">
+            <div id="preview4" class="input-wrap">
+              <img id="imghead4" border="0" src="" onclick="$('#previewImg4').click();">
+            </div>
+            <input name="previewImg4" type="file" onchange="previewImage(this,'preview4',this.id,4)"
+                   style="display: none;" id="previewImg4">
+
+          </div>
+          <p class="text">银行卡正面</p>
+        </div>
+        <div class="upload-item">
+          <div class="input-wrap">
+            <div id="preview5" class="input-wrap">
+              <img id="imghead5" border="0" src="" onclick="$('#previewImg5').click();">
+            </div>
+            <input name="previewImg5" type="file" onchange="previewImage(this,'preview5',this.id,5)"
+                   style="display: none;" id="previewImg5">
+
+          </div>
+          <p class="text">营业执照正面</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn-submit" type="submit">确认提交</button>
+</form>
+
+
+<script src="js/rem.js" type="text/javascript"></script>
+<script src="plugins/jquery-1.11.0.min.js"></script>
+<script src="js/updown.js"></script>
+
+</body>
+</html>
+

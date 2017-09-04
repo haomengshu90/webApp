@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "mixin";
+.box form label{
+  @include px-rem(padding-left,15);
+  @include px-rem(padding-left,15);
+  @include px-rem(width,42);
+  display: inline-block;
+  color: #1abc9c;
+}

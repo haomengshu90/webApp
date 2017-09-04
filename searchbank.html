@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>添加结算卡</title>
+  <link rel="stylesheet" href="css/searchBank.css"/>
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_400610_kcjlc26dck1n61or.css">
+</head>
+<body>
+<form action="post" onsubmit="return false" class="form">
+  <div class="searchBank-wrapper">
+    <div class="search-wrap">
+      <div class="inputWrapper" style="width:100%;">
+        <label for="searchInput" style="margin: 0 auto;" id="label2">
+          <i class="iconfont icon-shousuo"></i>
+          <input id="searchInput" autocomplete="off" type="search" placeholder="请选择开户行"/>
+        </label>
+      </div>
+      <!-- 搜索框后面的取消文字-->
+      <span id="cancel" style="display:none">取消</span>
+    </div>
+    <ul id="ul"></ul>
+  </div>
+</form>
+
+<script src="plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script>
+  var arr = [
+    "北京海淀区招商银行",
+    "北京海淀区建设银行",
+    "北京朝阳区招商银行",
+    "天津海淀区招商银行",
+    "天津海淀区建设银行",
+    "天津朝阳区招商银行"
+  ];
+  var infoStr = "";// 2017.08.31
+  for (var i = 0; i < arr.length; i++) {// 2017.08.31
+    infoStr += "<li>" + arr[i] + "</li>";
+  }
+  $("#ul").html(infoStr);// 2017.08.31
+
+  function search(keyWord) {
+    var reg = new RegExp(keyWord);
+    for (var i = 0, resultArr = []; i < arr.length; i++) {
+      var index = arr[i].match(reg);
+      if (index != null) {
+        resultArr.push(arr[i])
+      }
+    }
+    return resultArr;
+  }
+  //    console.log(search("招商"))
+
+
+  /*电脑端keyup 可用手机端兼容有问题 选择的propertychange*/
+  $("#searchInput").on('input propertychange', function () {
+    var keyWord = $(this).val();
+    var searchArr = search(keyWord);
+    for (var i = 0, str = ""; i < searchArr.length; i++) {
+      str += "<li>" + searchArr[i] + "</li>";
+    }
+    $("ul").html(str);
+  });
+
+  /*
+   * 搜索结果点击回显事件touchstart
+   * */
+  /*$("#ul").on("click", "li", function () {
+   $("#searchInput").val($(this).text());
+   var ulKey="";
+   var ulVal=$("#searchInput").val($(this).text());
+   window.sessionStorage.setItem('ulKey',ulVal);
+   // 跳回提交页面
+   //var ulVal=$("#searchInput").val($(this).text());
+   //            console.log(ulVal);
+   window.history.back(-1);
+   });*/
+
+  $("#ul").on("touchstart", "li", function () {
+    $("#searchInput").val($(this).text());
+    // 跳回提交页面
+    var ulVal = $("#searchInput").val();
+    var ulKey = "";
+    window.sessionStorage.setItem('ulKey', ulVal);
+    //window.history.back(-1);
+    window.location.href = "pay.html?search=true";// 2017.08.31
+  });
+
+
+
+  /*搜索栏取消按钮的样式*/
+  /*input获得焦点后样式改变*/
+  $(".inputWrapper").on("click",function(){
+    inputChange();
+  })em inputChange(){
+    $("#cancel").css({"display":"block"});
+    $(".inputWrapper").css({"width":"88%"});
+    $(".icon-shousuo").css("margin-left","1rem");
+
+  }
+  $("#cancel").on("click",function(){
+    $("#label2").css({"transform":"translate(0rem)"});
+    $(this).css("display","none");
+    $(".inputWrapper").css({"width":"100%"});
+    $(".icon-shousuo").css("margin-left","5rem");
+  });
+
+
+
+
+
+
+  /*向后台发送搜索条件 待定 后台要求都在前端实现 发送数据待定*/
+  function senData(data) {
+
+  }
+
+
+</script>
+<script src="js/oldFontSet.js"></script>
+</body>
+</html>

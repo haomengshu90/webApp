@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <title>添加商户</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/_add_bussiness.css"/>
+</head>
+<body class="add_member">
+<form class="form" onsubmit="return false">
+  <ul id="inputUl" class="first">
+    <!--第一部分-->
+    <li class='merchantInfos'>
+      <p class='merchantImg four_size'><img src="imgs/info.jpg" alt=""/>商户信息</p>
+      <div class='merchantInfo'>
+        <label class="four_size">商户名称</label>
+        <input type="text" name="merchantName" id="merchantName" value="" class="required four_size_input"
+               placeholder="请输入商户名称 (5-12位)"/>
+      </div>
+
+      <!--详细门牌号需要定位  百度地图-->
+      <div class='merchantInfo address'>
+        <label class="four_size">经营地址：</label>
+        <input type="text" name="operateAddress" id="operateAddress" value="" class="required four_size_input" placeholder="请选择" /><img id="showAdd"
+              src="imgs/address.png" alt=""/>
+      </div>
+
+      <div class='merchantInfo'>
+        <label class="four_size">门牌号 <i>(选填)</i></label>
+        <input name="merchantPersonEmail" id="houseNum" class="required" placeholder="详细门牌号"/>
+      </div>
+    </li>
+  </ul>
+
+  <button class="next" id="next" type="button">下一步</button>
+</form>
+<script src="plugins/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/new_reg_test.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=HbUVYMUg6PwbOnXkztdgSQlQ"></script>
+<script src="js/localPosition.js"></script>
+</body>
+</html>

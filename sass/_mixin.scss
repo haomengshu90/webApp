@@ -1,0 +1,46 @@
+@charset "UTF-8";
+//定义一个变量和一个mixin
+$baseFontSize: 75; //基于视觉稿横屏尺寸/100得出的基准font-size
+@mixin px-rem($name,$px) {
+  #{$name} : $px / $baseFontSize * 1rem;
+}
+@mixin box-sizing ($sizing) {
+  -webkit-box-sizing:$sizing;
+  -moz-box-sizing:$sizing;
+  box-sizing:$sizing;
+}
+$grayBorder: #F4F4F4; //title边框色 灰色边框
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin scale($scale) {
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -ms-transform: scale($scale);
+  -o-transform: scale($scale);
+  transform: scale($scale);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity * 100);
+}
+@mixin bg-image($url) {
+ /* background-image: url($url + "@2x.png");
+  @media (-webkit-min-device-pixel-ratio: 3) and (min-device-pixel-ratio: 3) {
+    background-image: url($url + "@3x.png");
+  }*/
+}

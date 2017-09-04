@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>添加结算卡</title>
+    <link rel="stylesheet" href="css/pay.css"/>
+</head>
+<body>
+<section class="box">
+    <!--<div class="payCard"><img src="../imgs/idCard.png" alt="">信用卡信息</div>-->
+    <form class="form"  id="cardInfo" onsubmit="return false">
+        <p><img src="imgs/idCard.png" alt="">结算银行卡</p>
+        <ul>
+            <li><label>信用卡号</label><input id="bankNum" name="bankNum" type="text" placeholder="请输入信用卡号" /></li>
+        </ul>
+        <div>
+            <!--postInfo-->
+            <button class="btn-submit2" type="button" name="next" id="addInfoBtn">补充资质</button>
+        </div>
+    </form>
+</section>
+    <script src="plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/new_reg_test.js"></script>
+</body>
+</html>
